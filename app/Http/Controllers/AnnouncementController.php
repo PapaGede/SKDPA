@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Validator;
 use Log;
+use Carbon\Carbon;
 
 class AnnouncementController extends Controller
 {
@@ -25,7 +26,9 @@ class AnnouncementController extends Controller
 		$user = [
 			'title' => $r->title,
 			'announcement_id' => Str::random(4),
-			'sender' => auth()->user()->name,
+            'sender' => auth()->user()->name,
+            'date'=> Carbon::now()->toDateString(),
+            'time'=> Carbon::now()->toTimeString(),
 			'message' => $r->message
 		];
 
@@ -40,6 +43,8 @@ class AnnouncementController extends Controller
             	'sender' => $user['sender'],
                 'announcement_id' =>$user['announcement_id'],
                 'title' => $user['title'],
+                'date' => $user['date'],
+                'time' => $user['time'],
                 'message' => $user['message']
 	        ]);
 
@@ -57,6 +62,8 @@ class AnnouncementController extends Controller
             	'sender' => $user['sender'],
                 'announcement_id' =>$user['announcement_id'],
                 'title' => $user['title'],
+                'date' => $user['date'],
+                'time' => $user['time'],
                 'message' => $user['message']
 	        ]);
 
