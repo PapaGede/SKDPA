@@ -46,7 +46,12 @@
 *::after {
   box-sizing: border-box;
 }
+.image{
+    height:450px;
+   margin-left: 0px;
+   margin-right: 1px;
 
+}
 html {
   font-family: sans-serif;
   line-height: 1.15;

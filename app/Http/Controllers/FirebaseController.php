@@ -11,16 +11,16 @@ class FirebaseController extends Controller
     //
     public function register(Request $request){
 
-    	$validator = Validator::make($request->all(), [ 
+    	$validator = Validator::make($request->all(), [
     		'name' => 'required|string',
     		'porter_id' => 'required|string',
 		    'email' => 'required|email',
 	        'mobile_number' => 'required|string',
-	        'password' => 'required', 
-	        'confirm_password' => 'required|same:password', 
+	        'password' => 'required',
+	        'confirm_password' => 'required|same:password',
 	    ]);
 
-	    if ($validator->fails()) { 
+	    if ($validator->fails()) {
 	    	Log::warning("Validation failed ".$validator->errors());
 	    	return "validation failed ".$validator->errors();
 		}
@@ -48,7 +48,7 @@ class FirebaseController extends Controller
 
 	        if(!$data){//checking if $data is empty
 	            $data = $database->getReference('porter')->push([
-	            
+
 	                //'key' => 'value'
 	            	'name' => $user['name'],
 	                'porter_id' =>$user['porter_id'],
@@ -71,10 +71,10 @@ class FirebaseController extends Controller
 		                'mobile_number' => $user['mobile_number'],
 		                'password' => $user['password']
 			        ]);
-	            
+
 	                return "success success";
-	                }    
-	            } 
+	                }
+	            }
 	        }
 		}
 	}

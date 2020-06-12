@@ -4,7 +4,6 @@
     @include('partials._dashHeader')
     <body class="sb-nav-fixed">
         @include('partials._dashNav')
-        @section('name','Dashboard')
         @section('crumb','Dashboard')
         @include('partials._dashSidebar')
 

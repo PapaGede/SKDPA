@@ -28,6 +28,7 @@ Auth::routes();
 Route::post('firebase','FirebaseController@register');
 Route::get('addStudent','StudentController@randomStudent');
 Route::get('showstudent','StudentController@showStudent');
+Route::get('showcomplaint','ComplaintController@showcomplaint');
 Route::get('showannounce','AnnouncementController@showAnnouncement');
 Route::get('addprog','ProgramController@randomProg');
 Route::post('announcement','AnnouncementController@createAnnouncement');

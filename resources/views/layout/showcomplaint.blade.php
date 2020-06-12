@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    @section('page','| Announcement')
+    @section('page','| Complaints')
     @include('partials._dashHeader')
     <body class="sb-nav-fixed">
         @include('partials._studNav')
 
-        @section('name','Announcement')
-        @section('crumb','Announcements')
-
+        @section('name','Complaints')
+        @section('crumb','All complaints from the students')
         @include('partials._dashSidebar')
 
         @include('partials._dashScripts')
